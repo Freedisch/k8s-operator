@@ -1,0 +1,27 @@
+# permissions for end users to view exposes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: expose-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: k8s-operator
+    app.kubernetes.io/part-of: k8s-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: expose-viewer-role
+rules:
+  - apiGroups:
+      - api.core.k8s-operator.io
+    resources:
+      - exposes
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - api.core.k8s-operator.io
+    resources:
+      - exposes/status
+    verbs:
+      - get

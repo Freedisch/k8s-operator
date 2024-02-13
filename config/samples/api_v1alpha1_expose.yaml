@@ -1,0 +1,25 @@
+apiVersion: api.core.k8s-operator.io/v1alpha1
+kind: Expose
+metadata:
+  labels:
+    app.kubernetes.io/name: expose
+    app.kubernetes.io/instance: expose-sample
+    app.kubernetes.io/part-of: k8s-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: k8s-operator
+  name: expose-sample
+spec:
+  name: cr-dsi
+  deployment:
+    - name: nginx-deployment
+      replicas: 1
+      component: nginx
+      containers:
+        - name: nginx
+          image: nginx
+  service:
+    - name: nginx-service
+      port: 80
+  ingress:
+    - name: nginx-ingress
+      path: /nginx

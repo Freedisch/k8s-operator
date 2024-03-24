@@ -4,7 +4,7 @@ The operator will create a deployment, a service, and an ingress resource to exp
 
 ## Description
 
-The operator’s job is to create a deployment, a service, and an ingress resource to expose it on a desired port when a custom resource is created by an administrator. The idea is the same as the controller built by [Mr. Vivek Singh](https://www.youtube.com/playlist?list=PLh4KH3LtJvRQ43JAwwjvTnsVOMp0WKnJO), where he wrote a logic to create a service and ingress resources when a deployment resource is created without using CRD's. Also this operator is bootstrapped with Kubebuilder.
+The operator’s job is to create a deployment, a service, and an ingress resource to expose it on a desired port when a custom resource is created by an administrator. The idea is to build a controller to create a service and ingress resources when a deployment resource is created without using CRD's. Also this operator is bootstrapped with Kubebuilder.
 
 ## Getting Started
 
